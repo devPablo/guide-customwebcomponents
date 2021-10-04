@@ -1,0 +1,43 @@
+/* Global */
+body {
+  font-family: 'Roboto';
+}
+
+/* KG Button Component */
+.kg-button {
+  background-color: #1358db;
+  border: none;
+  border-radius: 3px;
+  outline: 0;
+  padding: 15px 24px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.kg-button:hover {
+  background-color: #003fc2;
+}
+
+/* KG Card Component */
+.kg-card {
+  background-color: #f2f2f2;
+  padding: 2rem;
+  border-radius: 3px;
+  border: 1px solid #d1d1d1;
+  margin: 1rem 0;
+  width: 400px;
+}
+
+.kg-card__label {
+  display: flex;
+  color: #101010;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  width: 60%;
+}

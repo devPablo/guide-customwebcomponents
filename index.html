@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Custom Web Components</title>
+  </head>
+  <body>
+    <h1 class="red">Custom Web Components</h1>
+
+    <kg-button text="Button Component"></kg-button>
+
+    <kg-card name="Pablo Bonilla" country="Costa Rica"></kg-card>
+    <kg-card name="Konrad Group" country="Canada"></kg-card>
+
+    <template id="js-kg_card">
+      <div class="kg-card">
+        <p id="name" class="kg-card__label"></p>
+        <p id="country" class="kg-card__label"></p>
+        <kg-button id="view_button" text="View more"></kg-button>
+      </div>
+    </template>
+
+    <!-- Button Shadow Compontent -->
+    <kg-button-shadow>
+      <button type="button" slot="button" class='kg-button'>Button Shadow Component (DOM)</button>
+    </kg-button-shadow>
+
+    <!-- Import Custom Web Components -->
+    <script src="./components/kg-button.js"></script>
+    <script src="./components/kg-card.js"></script>
+    <script src="./components/kg-button-shadow.js"></script>
+  </body>
+</html>
