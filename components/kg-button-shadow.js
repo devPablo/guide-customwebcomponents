@@ -21,7 +21,7 @@ buttonShadowTemplate.innerHTML = `
   </style>
   <div>
     <slot name='button'></slot>
-    <button type="button" slot="button" class='kg-button'>Button Shadow Component (SHADOW DOM)</button>
+    <button id='test' type="button" slot="button" class='kg-button'>Button Shadow Component (SHADOW DOM)</button>
   </div>
 `;
 
@@ -29,9 +29,14 @@ class KG_Button_Shadow extends HTMLElement {
   constructor() {
     super();
 
-    this.attachShadow({ mode: 'open' });
+    this.root = this.attachShadow({ mode: 'closed' });
+    
     // Access shadowRoot if { mode: 'open' }, { mode: 'closed' } returns null;
-    this.shadowRoot.appendChild(buttonShadowTemplate.content.cloneNode(true));
+    // this.shadowRoot.innerHTML = '<p>Hello</p>'
+  }
+
+  connectedCallback() {
+    this.root.appendChild(buttonShadowTemplate.content.cloneNode(true));
   }
 }
 
