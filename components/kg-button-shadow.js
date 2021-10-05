@@ -29,14 +29,14 @@ class KG_Button_Shadow extends HTMLElement {
   constructor() {
     super();
 
-    this.root = this.attachShadow({ mode: 'closed' });
+    this.attachShadow({ mode: 'open' });
     
     // Access shadowRoot if { mode: 'open' }, { mode: 'closed' } returns null;
     // this.shadowRoot.innerHTML = '<p>Hello</p>'
   }
 
   connectedCallback() {
-    this.root.appendChild(buttonShadowTemplate.content.cloneNode(true));
+    this.shadowRoot.appendChild(buttonShadowTemplate.content.cloneNode(true));
   }
 }
 
